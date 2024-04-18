@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvwv3xfbg8iwf"
+path="res://.godot/imported/Track_Bridge_Flat_Supported.obj-b1be6339e63349d2815a2465e9652d6c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track_Bridge_Flat_Supported.obj-b1be6339e63349d2815a2465e9652d6c.mesh"]
+
+source_file="res://models/racetrackkit/Track_Bridge_Flat_Supported.obj"
+dest_files=["res://.godot/imported/Track_Bridge_Flat_Supported.obj-b1be6339e63349d2815a2465e9652d6c.mesh", "res://.godot/imported/Track_Bridge_Flat_Supported.obj-b1be6339e63349d2815a2465e9652d6c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

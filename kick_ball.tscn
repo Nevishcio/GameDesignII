@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://orsbw5g0j5cs"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_64qpr"]
+
+[node name="KickBall" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4998.15, 1037.4)
+mass = 0.01
+inertia = Vector3(1e+07, 1e+07, 1e+07)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, 0, 0)
+use_collision = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -0.0248232, 0, 0.0159054)
+shape = SubResource("SphereShape3D_64qpr")

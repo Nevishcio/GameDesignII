@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=3 uid="uid://dkangsvtvh203"]
+
+[ext_resource type="PackedScene" uid="uid://yn85nqs3cxck" path="res://playerhud_3d.tscn" id="1_83vkk"]
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="1_cq6tn"]
+[ext_resource type="PackedScene" uid="uid://dc8h0q3i02053" path="res://push.tscn" id="1_detio"]
+[ext_resource type="PackedScene" uid="uid://b3yjhcvijmrlp" path="res://player_3d.tscn" id="2_fxqjw"]
+[ext_resource type="PackedScene" uid="uid://cwmc4eb4yttpv" path="res://enemy_3d.tscn" id="3_h2kot"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_l6nue"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="5_e7ilq"]
+[ext_resource type="Resource" path="res://data.hterrain" id="5_o5pdd"]
+[ext_resource type="Texture2D" uid="uid://dcptol2d2wjdw" path="res://terrain/textures/Metal046B_1K-JPG/Metal046B_1K-JPG_Color.jpg" id="7_2583t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_votxm"]
+sky_top_color = Color(0.776471, 0.831373, 0.984314, 1)
+sky_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+sky_energy_multiplier = 8.0
+ground_bottom_color = Color(0.305882, 0.278431, 0.313726, 1)
+ground_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+
+[sub_resource type="Sky" id="Sky_twu0i"]
+sky_material = SubResource("ProceduralSkyMaterial_votxm")
+
+[sub_resource type="Environment" id="Environment_kgiuf"]
+background_mode = 2
+sky = SubResource("Sky_twu0i")
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_ru77w"]
+script = ExtResource("5_e7ilq")
+mode = 0
+textures = [[ExtResource("7_2583t")], [ExtResource("7_2583t")]]
+
+[node name="scene3d3" type="Node3D"]
+
+[node name="push" parent="." instance=ExtResource("1_detio")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 67.1341, 49.5148, 90.8039)
+
+[node name="Goal" parent="." instance=ExtResource("1_cq6tn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 484.845, 4.20696, 86.949)
+next_level = "scene_3d_4"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kgiuf")
+
+[node name="playerhud3d" parent="." instance=ExtResource("1_83vkk")]
+
+[node name="player3d" parent="." instance=ExtResource("2_fxqjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.98, 5.67097, 65.5101)
+
+[node name="enemy3d" parent="." instance=ExtResource("3_h2kot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.5346, 8.21673, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.85098, 0.917647, 0.984314, 1)
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("4_l6nue")
+ambient_wind = 0.05
+_terrain_data = ExtResource("5_o5pdd")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_ru77w")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null

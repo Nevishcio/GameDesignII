@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6f2rvombyrvj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_113vs"]
+bounce = 676.25
+absorbent = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_37qef"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x88ke"]
+
+[node name="Pushable" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6041, 3.41504, 0)
+mass = 75.0
+inertia = Vector3(50, 50, 50)
+physics_material_override = SubResource("PhysicsMaterial_113vs")
+lock_rotation = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_37qef")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("BoxShape3D_x88ke")

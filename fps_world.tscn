@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2f48i8wuoifu"]
+
+[ext_resource type="PackedScene" uid="uid://dhq5ytlmfup3w" path="res://de_dust_2_with_real_light.tscn" id="1_mjg2y"]
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="1_wfmne"]
+[ext_resource type="PackedScene" uid="uid://68qtuglbmgqw" path="res://fps_enemy_template.tscn" id="2_njslm"]
+[ext_resource type="PackedScene" uid="uid://clusmie3cj1uw" path="res://fps_player_template.tscn" id="3_d0q8t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bq1w"]
+sky_top_color = Color(0, 0.964706, 0.854902, 1)
+sky_horizon_color = Color(0.57647, 0.810784, 0.792157, 1)
+sky_energy_multiplier = 2.25
+ground_bottom_color = Color(0.305882, 0.278431, 0.313726, 1)
+ground_horizon_color = Color(0.57647, 0.810784, 0.792157, 1)
+
+[sub_resource type="Sky" id="Sky_6nxls"]
+sky_material = SubResource("ProceduralSkyMaterial_6bq1w")
+
+[sub_resource type="Environment" id="Environment_6xyvl"]
+background_mode = 2
+sky = SubResource("Sky_6nxls")
+glow_enabled = true
+
+[node name="fps_world" type="Node3D"]
+
+[node name="Goal" parent="." instance=ExtResource("1_wfmne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7855, -4.74595, -1.25428)
+next_level = "fps2"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6xyvl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.203922, 0.945098, 0.882353, 1)
+light_energy = 3.25
+shadow_enabled = true
+
+[node name="de_dust_2_with_real_light" parent="." instance=ExtResource("1_mjg2y")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+
+[node name="fps_enemy" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.487, 4.89728, -73.8682)
+
+[node name="fps_enemy2" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.487, 4.89728, -74.9658)
+
+[node name="fps_enemy3" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2266, 4.89728, -73.8682)
+
+[node name="fps_enemy14" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2266, 4.89728, -75.0922)
+
+[node name="fps_enemy4" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6408, 4.89728, -73.8682)
+
+[node name="fps_enemy15" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6408, 4.89728, -75.0872)
+
+[node name="fps_enemy5" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8689, 4.89728, -73.8682)
+
+[node name="fps_enemy16" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8689, 4.89728, -75.0705)
+
+[node name="fps_enemy6" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1069, 4.89728, -73.8682)
+
+[node name="fps_enemy17" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1069, 4.89728, -74.9781)
+
+[node name="fps_enemy7" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7353, 4.89728, -73.8682)
+
+[node name="fps_enemy18" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7353, 4.89728, -74.9898)
+
+[node name="fps_enemy8" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7825, 4.89728, -73.8682)
+
+[node name="fps_enemy13" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7825, 4.89728, -75.1623)
+
+[node name="fps_enemy9" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5863, 4.89728, -73.8682)
+
+[node name="fps_enemy12" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5863, 4.89728, -75.0902)
+
+[node name="fps_enemy10" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9263, 4.89728, -73.8682)
+
+[node name="fps_enemy19" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9263, 4.89728, -74.9689)
+
+[node name="fps_enemy11" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2431, 4.89728, -73.8682)
+
+[node name="fps_enemy20" parent="." instance=ExtResource("2_njslm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2827, 4.89728, -75.0135)
+
+[node name="fps_player" parent="." instance=ExtResource("3_d0q8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3548, 4.60785, -62.6251)

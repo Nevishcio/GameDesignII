@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwmc4eb4yttpv"]
+
+[ext_resource type="Script" path="res://enemy3d.gd" id="1_psvmv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0qtm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3wofp"]
+material = SubResource("StandardMaterial3D_p0qtm")
+
+[sub_resource type="Skin" id="Skin_7hhvr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mahbg"]
+transparency = 1
+blend_mode = 3
+cull_mode = 1
+depth_draw_mode = 2
+albedo_color = Color(0.333333, 0.694118, 0.380392, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdju3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8rk8j"]
+height = 0.624115
+radius = 0.692645
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_odgtf"]
+radius = 1.0103
+
+[node name="enemy3d" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_psvmv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_3wofp")
+skin = SubResource("Skin_7hhvr")
+surface_material_override/0 = SubResource("StandardMaterial3D_mahbg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cdju3")
+
+[node name="AttackRange" type="Area3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackRange"]
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AttackRange"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AttackRange"]
+transform = Transform3D(1, 0, 0, 0, 0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="AttackRange"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="AttackRange"]
+transform = Transform3D(1, 0, 0, 0, -0.173648, -0.984808, 0, 0.984808, -0.173648, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="AttackRange"]
+transform = Transform3D(1, 0, 0, 0, -0.573576, -0.819152, 0, 0.819152, -0.573576, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8rk8j")
+
+[node name="AttackArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("CapsuleShape3D_cdju3")
+
+[node name="DamageArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508265, 0)
+shape = SubResource("SphereShape3D_odgtf")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

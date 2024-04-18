@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dybj08ny5uicn"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_37bhe"]
+[ext_resource type="PackedScene" uid="uid://yn85nqs3cxck" path="res://playerhud_3d.tscn" id="1_femwk"]
+[ext_resource type="PackedScene" uid="uid://b3yjhcvijmrlp" path="res://player_3d.tscn" id="2_4isc5"]
+[ext_resource type="Resource" path="res://GameDesignII/data.hterrain" id="2_tqk31"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_b6sti"]
+[ext_resource type="Texture2D" uid="uid://bkawrkbr5vx8p" path="res://scene_3d_2_slot1_normal_roughness.png" id="4_a3oro"]
+
+[sub_resource type="Resource" id="Resource_wqs3l"]
+script = ExtResource("3_b6sti")
+mode = 0
+textures = [[ExtResource("4_a3oro")], [ExtResource("4_a3oro")]]
+
+[sub_resource type="Environment" id="Environment_w6rpt"]
+ambient_light_source = 2
+ambient_light_color = Color(0.858824, 0.854902, 0.819608, 1)
+
+[node name="scene3d4" type="Node3D"]
+
+[node name="playerhud3d" parent="." instance=ExtResource("1_femwk")]
+
+[node name="player3d" parent="." instance=ExtResource("2_4isc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4704, 0, 18.4591)
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_37bhe")
+ambient_wind = 1.0
+_terrain_data = ExtResource("2_tqk31")
+chunk_size = 64
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_wqs3l")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.573705, 0.56493, 0.583833, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w6rpt")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3uqhdwf4rqnu"]
+
+[ext_resource type="Script" path="res://Goal.gd" id="1_wvibh"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x2s4b"]
+top_radius = 0.0
+bottom_radius = 3.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfoi1"]
+albedo_color = Color(0.34902, 0.356863, 0.360784, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xgg1q"]
+top_radius = 3.1
+bottom_radius = 3.1
+height = 4.621
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxvbb"]
+albedo_color = Color(0.34902, 0.356863, 0.360784, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kaplt"]
+height = 1.37265
+radius = 0.93928
+
+[node name="Goal" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60084, 0)
+script = ExtResource("1_wvibh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.32367, 0)
+mesh = SubResource("CylinderMesh_x2s4b")
+surface_material_override/0 = SubResource("StandardMaterial3D_dfoi1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01438, 0)
+mesh = SubResource("CylinderMesh_xgg1q")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_rxvbb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, 0, 0.966475, 0)
+shape = SubResource("CylinderShape3D_kaplt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

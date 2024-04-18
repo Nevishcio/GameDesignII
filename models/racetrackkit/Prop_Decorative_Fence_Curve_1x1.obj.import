@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7c76arq25d2m"
+path="res://.godot/imported/Prop_Decorative_Fence_Curve_1x1.obj-70e8bc104242847bf9cc414104d0764b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Decorative_Fence_Curve_1x1.obj-70e8bc104242847bf9cc414104d0764b.mesh"]
+
+source_file="res://models/racetrackkit/Prop_Decorative_Fence_Curve_1x1.obj"
+dest_files=["res://.godot/imported/Prop_Decorative_Fence_Curve_1x1.obj-70e8bc104242847bf9cc414104d0764b.mesh", "res://.godot/imported/Prop_Decorative_Fence_Curve_1x1.obj-70e8bc104242847bf9cc414104d0764b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

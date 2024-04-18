@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4x357lyb6nxm"]
+
+[ext_resource type="PackedScene" uid="uid://7gsc1vm04sni" path="res://tf2_-_couch.glb" id="1_6n0sl"]
+[ext_resource type="PackedScene" uid="uid://clusmie3cj1uw" path="res://fps_player_template.tscn" id="2_vrvg5"]
+[ext_resource type="PackedScene" uid="uid://68qtuglbmgqw" path="res://fps_enemy_template.tscn" id="3_gcgxv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrpve"]
+sky_top_color = Color(0.776471, 0.831373, 0.984314, 1)
+sky_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.305882, 0.278431, 0.313726, 1)
+ground_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+
+[sub_resource type="Sky" id="Sky_2ucgh"]
+sky_material = SubResource("ProceduralSkyMaterial_yrpve")
+
+[sub_resource type="Environment" id="Environment_6n27x"]
+background_mode = 2
+sky = SubResource("Sky_2ucgh")
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6n27x")
+
+[node name="tf2_-_couch" parent="." instance=ExtResource("1_6n0sl")]
+
+[node name="fps_player" parent="." instance=ExtResource("2_vrvg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3079.04, 0)
+
+[node name="fps_enemy" parent="." instance=ExtResource("3_gcgxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1809.91, 2890.7, 821.361)

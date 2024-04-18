@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://blajbl2tyh15n"]
+
+[ext_resource type="PackedScene" uid="uid://b6f2rvombyrvj" path="res://pushable.tscn" id="1_gcmgi"]
+[ext_resource type="PackedScene" uid="uid://yn85nqs3cxck" path="res://playerhud_3d.tscn" id="1_mfp4h"]
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="1_q5o7d"]
+[ext_resource type="PackedScene" uid="uid://b3yjhcvijmrlp" path="res://player_3d.tscn" id="2_tym87"]
+[ext_resource type="PackedScene" uid="uid://cwmc4eb4yttpv" path="res://enemy_3d.tscn" id="3_1cv7m"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_pfmkd"]
+[ext_resource type="Resource" path="res://terrain/phase2/data.hterrain" id="5_3ting"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_tsvte"]
+[ext_resource type="Texture2D" uid="uid://cf3jcclp3h34k" path="res://scene_3d_2_slot1_albedo_bump.png" id="8_pqreu"]
+[ext_resource type="Texture2D" uid="uid://bkawrkbr5vx8p" path="res://scene_3d_2_slot1_normal_roughness.png" id="10_nnogr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hsled"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_e8n87"]
+sky_material = SubResource("ProceduralSkyMaterial_hsled")
+
+[sub_resource type="Environment" id="Environment_4bsq1"]
+background_mode = 2
+sky = SubResource("Sky_e8n87")
+tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_dtrey"]
+script = ExtResource("6_tsvte")
+mode = 0
+textures = [[null, ExtResource("8_pqreu")], [null, ExtResource("10_nnogr")]]
+
+[node name="scene3d2" type="Node3D"]
+
+[node name="Pushable3" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6977, 13.1413, -5.45961)
+freeze = true
+
+[node name="Pushable4" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5427, 10.6025, -22.1979)
+freeze = true
+
+[node name="Pushable6" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.285, 14.0067, -16.0706)
+freeze = true
+
+[node name="Pushable7" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3266, 16.0626, -22.1162)
+freeze = true
+
+[node name="Pushable9" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05421, 17.8414, -13.455)
+freeze = true
+
+[node name="Pushable10" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2105, 19.2171, -7.26113)
+freeze = true
+
+[node name="Pushable8" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3688, 23.3994, -22.056)
+
+[node name="Pushable5" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3366, 2.65128, 1.80796)
+freeze = true
+
+[node name="Pushable2" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4224, 14.7037, -15.6512)
+freeze = true
+
+[node name="Pushable" parent="." instance=ExtResource("1_gcmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5936, 10.462, 0)
+freeze = true
+
+[node name="Goal" parent="." instance=ExtResource("1_q5o7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3375, 1.60084, 6.48901)
+next_level = "scene_3d_3"
+
+[node name="playerhud3d" parent="." instance=ExtResource("1_mfp4h")]
+
+[node name="player3d" parent="." instance=ExtResource("2_tym87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3698, 0, 14.0429)
+
+[node name="enemy3d" parent="." instance=ExtResource("3_1cv7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.619, 13.3199, 10.021)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4bsq1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.619608, 0.756863, 0.992157, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(0.437179, 0, 0.899375, -0.0191176, 0.999774, 0.00929289, -0.899171, -0.0212565, 0.43708, 0, 0, 0)
+script = ExtResource("4_pfmkd")
+centered = true
+_terrain_data = ExtResource("5_3ting")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_dtrey")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null

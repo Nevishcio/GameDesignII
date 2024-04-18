@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pdrqddrt1w8x"
+path="res://.godot/imported/Prop_Decorative_Windmill_Building_1.obj-12282ffbceb0bd6e0803b963d23b6742.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Decorative_Windmill_Building_1.obj-12282ffbceb0bd6e0803b963d23b6742.mesh"]
+
+source_file="res://models/racetrackkit/Prop_Decorative_Windmill_Building_1.obj"
+dest_files=["res://.godot/imported/Prop_Decorative_Windmill_Building_1.obj-12282ffbceb0bd6e0803b963d23b6742.mesh", "res://.godot/imported/Prop_Decorative_Windmill_Building_1.obj-12282ffbceb0bd6e0803b963d23b6742.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

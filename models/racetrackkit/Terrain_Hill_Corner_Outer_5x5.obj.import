@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcpec6548h2yc"
+path="res://.godot/imported/Terrain_Hill_Corner_Outer_5x5.obj-79b74a871304c6f2dad381fa336ab35e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Terrain_Hill_Corner_Outer_5x5.obj-79b74a871304c6f2dad381fa336ab35e.mesh"]
+
+source_file="res://models/racetrackkit/Terrain_Hill_Corner_Outer_5x5.obj"
+dest_files=["res://.godot/imported/Terrain_Hill_Corner_Outer_5x5.obj-79b74a871304c6f2dad381fa336ab35e.mesh", "res://.godot/imported/Terrain_Hill_Corner_Outer_5x5.obj-79b74a871304c6f2dad381fa336ab35e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

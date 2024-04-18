@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl1qdjnhkpmfe"]
+
+[ext_resource type="PackedScene" uid="uid://de6hoypx64otu" path="res://city_scene_tokyo.glb" id="1_qmp4e"]
+[ext_resource type="PackedScene" uid="uid://68qtuglbmgqw" path="res://fps_enemy_template.tscn" id="2_f7yd0"]
+[ext_resource type="PackedScene" uid="uid://clusmie3cj1uw" path="res://fps_player_template.tscn" id="2_lhrcg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b7uec"]
+sky_top_color = Color(0.776471, 0.831373, 0.984314, 1)
+sky_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.305882, 0.278431, 0.313726, 1)
+ground_horizon_color = Color(0.770588, 0.777451, 0.82451, 1)
+
+[sub_resource type="Sky" id="Sky_3nhci"]
+sky_material = SubResource("ProceduralSkyMaterial_b7uec")
+
+[sub_resource type="Environment" id="Environment_mlfpf"]
+background_mode = 2
+sky = SubResource("Sky_3nhci")
+glow_enabled = true
+
+[node name="city_scene_tokyo" instance=ExtResource("1_qmp4e")]
+
+[node name="fps_enemy" parent="." index="0" instance=ExtResource("2_f7yd0")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.16668, 3.02999, 0)
+
+[node name="fps_player" parent="." index="1" instance=ExtResource("2_lhrcg")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.312948, 1.14102, 5.38333)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = SubResource("Environment_mlfpf")

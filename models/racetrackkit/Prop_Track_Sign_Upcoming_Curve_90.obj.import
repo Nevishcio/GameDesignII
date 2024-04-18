@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clyvxu0kvruee"
+path="res://.godot/imported/Prop_Track_Sign_Upcoming_Curve_90.obj-5f919ee1c44b9922f21a5a6e41e454be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Track_Sign_Upcoming_Curve_90.obj-5f919ee1c44b9922f21a5a6e41e454be.mesh"]
+
+source_file="res://models/racetrackkit/Prop_Track_Sign_Upcoming_Curve_90.obj"
+dest_files=["res://.godot/imported/Prop_Track_Sign_Upcoming_Curve_90.obj-5f919ee1c44b9922f21a5a6e41e454be.mesh", "res://.godot/imported/Prop_Track_Sign_Upcoming_Curve_90.obj-5f919ee1c44b9922f21a5a6e41e454be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
