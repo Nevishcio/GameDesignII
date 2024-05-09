@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://camsnxsyockou"]
+[gd_scene load_steps=8 format=3 uid="uid://camsnxsyockou"]
 
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="1_2tq4t"]
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="1_icplw"]
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="2_u7bb4"]
+[ext_resource type="AudioStream" uid="uid://fj553kxmmjjh" path="res://sounds/28. Coconut Mall.mp3" id="4_62osi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pfrql"]
 sky_top_color = Color(0.776471, 0.831373, 0.984314, 1)
@@ -19,6 +21,10 @@ glow_enabled = true
 
 [node name="rc_world" type="Node3D"]
 
+[node name="Goal" parent="." instance=ExtResource("1_2tq4t")]
+transform = Transform3D(0.001, 0, 0, 0, 4, 0, 0, 0, 4, -80.8543, 3.40177, 7.9699)
+next_level = "rc_world2"
+
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 mesh_library = ExtResource("2_u7bb4")
@@ -33,3 +39,7 @@ environment = SubResource("Environment_0rbo5")
 
 [node name="race" parent="." instance=ExtResource("1_icplw")]
 transform = Transform3D(0.999637, 0, 0.0269272, 0, 1, 0, -0.0269272, 0, 0.999637, -146.515, 33.5046, -43.6115)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_62osi")
+autoplay = true

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bes8vgqkxvdvq"]
+
+[ext_resource type="Script" path="res://particle_demo.gd" id="1_l14c2"]
+[ext_resource type="PackedScene" uid="uid://dwxuh7vhv3xkw" path="res://fire_particle.tscn" id="2_35t80"]
+
+[sub_resource type="Environment" id="Environment_k061p"]
+
+[node name="particle_demo" type="Node3D"]
+script = ExtResource("1_l14c2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0, 0, 0, 1)
+light_energy = 64.0
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k061p")
+
+[node name="fire_particle" parent="." instance=ExtResource("2_35t80")]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.217992, 0)
+height = 0.035
+sides = 16
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.877515, 0.47955, 0, -0.47955, 0.877515, 0, 0.711417, 1.50078)
+fov = 61.875

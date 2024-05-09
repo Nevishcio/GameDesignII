@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cemxemnl3ypjj"]
+[gd_scene load_steps=15 format=3 uid="uid://cemxemnl3ypjj"]
 
 [ext_resource type="Script" path="res://rc_player.gd" id="1_v2iri"]
+[ext_resource type="AudioStream" uid="uid://c2y7wt8k4n6fw" path="res://sounds/engine-loop/engine-loop/engine-loop-1-normalized.wav" id="2_nis06"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm3g6"]
 resource_name = "paintRed"
@@ -284,3 +285,9 @@ skeleton = NodePath("")
 transform = Transform3D(-1, 8.13397e-08, -3.20406e-08, 0, 0.366501, 0.930418, 8.74228e-08, 0.930418, -0.366501, 0, 0.311512, -0.929049)
 modulate = Color(0.918615, 0.736253, 0.274176, 1)
 text = "3"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_nis06")
+pitch_scale = 0.5
+autoplay = true
+doppler_tracking = 2

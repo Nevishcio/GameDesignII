@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dswxl7uolhqkw"
+path="res://.godot/imported/21. Mushroom Gorge.mp3-5cba7fa7093fbcd7d399a76d69f49cfd.mp3str"
+
+[deps]
+
+source_file="res://sounds/21. Mushroom Gorge.mp3"
+dest_files=["res://.godot/imported/21. Mushroom Gorge.mp3-5cba7fa7093fbcd7d399a76d69f49cfd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

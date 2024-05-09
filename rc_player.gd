@@ -1,12 +1,17 @@
 extends VehicleBody3D
 
 const MAX_STEER = 0.4
-const MAX_RPM = 300
-const MAX_TORQUE = 200
+const MAX_RPM = 500
+const MAX_TORQUE = 500
 const HORSE_POWER = 100
+var acceleration = HORSE_POWER
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	if acceleration >= -10:
+		var dB = min(1, 80*($backLeft.engine_force/MAX_RPM))
+	else:
+		pass
 
 func calc_engine_force(accel, rpm):
 	return accel * MAX_TORQUE * (1 - rpm / MAX_RPM)
