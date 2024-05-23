@@ -1,8 +1,8 @@
 extends VehicleBody3D
 
 const MAX_STEER = 0.4
-const MAX_RPM = 500
-const MAX_TORQUE = 500
+const MAX_RPM = 300
+const MAX_TORQUE = 250
 const HORSE_POWER = 100
 var acceleration = HORSE_POWER
 
