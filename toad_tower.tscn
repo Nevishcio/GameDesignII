@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5bon6ys83nxr"]
+[gd_scene load_steps=8 format=3 uid="uid://b5bon6ys83nxr"]
 
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="1_t47gn"]
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="2_4qc55"]
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="2_x15by"]
+[ext_resource type="AudioStream" uid="uid://dswxl7uolhqkw" path="res://sounds/21. Mushroom Gorge.mp3" id="4_6n48q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tyt2n"]
 sky_top_color = Color(0.643137, 0.8, 0.964706, 1)
@@ -38,5 +40,33 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="race" parent="." instance=ExtResource("2_4qc55")]
+[node name="Goal6" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.618, 4.19, 0)
+next_level = "koopas_crash"
+
+[node name="Goal5" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.236, 4.19, 0)
+next_level = "koopas_crash"
+
+[node name="Goal4" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.282, 4.19, 0)
+next_level = "koopas_crash"
+
+[node name="Goal3" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.698, 4.19, 0)
+next_level = "koopas_crash"
+
+[node name="Goal2" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.522, 4.19, 0)
+next_level = "koopas_crash"
+
+[node name="Goal" parent="." instance=ExtResource("2_x15by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.607, 4.19474, 0)
+next_level = "koopas_crash"
+
+[node name="race" parent="." groups=["Player"] instance=ExtResource("2_4qc55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.72, 8.65566, 186.593)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_6n48q")
+autoplay = true
