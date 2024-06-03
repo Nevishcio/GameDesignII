@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxr3mqq5htcp0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxr3mqq5htcp0"]
 
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="1_b1e7x"]
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="2_76avp"]
 [ext_resource type="AudioStream" uid="uid://b6uuow04cn0ia" path="res://sounds/31. DK Summit.mp3" id="3_eu0xh"]
+[ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="4_y58pf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7tmxl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,7 +17,7 @@ background_mode = 2
 sky = SubResource("Sky_7abdd")
 tonemap_mode = 2
 
-[node name="koopas_crash" type="Node3D"]
+[node name="koopa\'s_crash" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -25,18 +26,22 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7fo4")
 
-[node name="race" parent="." instance=ExtResource("1_b1e7x")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.01396, 144.885, 19.6141)
+[node name="race" parent="." groups=["Player"] instance=ExtResource("1_b1e7x")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.7312, 144.885, 147.141)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
 mesh_library = ExtResource("2_76avp")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(65534, 1, 655379, 65534, 2, 655379, 65534, 3, 655379, 65534, 4, 655379, 65534, 5, 655379, 65534, 6, 655379, 65533, 7, 19, 65532, 6, 19, 65532, 5, 19, 65532, 4, 19, 65532, 3, 19, 65532, 2, 19, 65532, 1, 19, 524285, 8, 393260, 458747, 6, 73, 458747, 7, 73, 458747, 8, 73, 458747, 10, 71, 458751, 10, 1048647, 458749, 10, 1048649, 458747, 4, 73, 458747, 5, 73, 458747, 3, 73, 458747, 2, 73, 458747, 1, 73, 458751, 8, 655433, 458751, 7, 655433, 458751, 6, 655433, 458751, 5, 655433, 458751, 4, 655433, 458751, 3, 655433, 458751, 2, 655433, 458751, 1, 655433, 458751, 65535, 655431, 458747, 65535, 1441863, 458749, 65535, 1441865)
+"cells": PackedInt32Array(65534, 1, 655379, 65534, 2, 655379, 65534, 3, 655379, 65534, 4, 655379, 65534, 5, 655379, 65534, 6, 655379, 65533, 7, 19, 65532, 6, 19, 65532, 5, 19, 65532, 4, 19, 65532, 3, 19, 65532, 2, 19, 65532, 1, 19, 524285, 8, 655446, 458747, 6, 73, 458747, 7, 73, 458747, 8, 73, 458747, 10, 71, 458751, 10, 1048647, 458749, 10, 1048649, 458747, 4, 73, 458747, 5, 73, 458747, 3, 73, 458747, 2, 73, 458747, 1, 73, 458751, 8, 655433, 458751, 7, 655433, 458751, 6, 655433, 458751, 5, 655433, 458751, 4, 655433, 458751, 3, 655433, 458751, 2, 655433, 458751, 1, 655433, 458751, 65535, 655431, 458747, 65535, 1441863, 458749, 65535, 1441865, 524283, 8, 655446, 524283, 9, 655446, 524284, 9, 655446, 524284, 8, 655446, 524285, 9, 655446, 524286, 9, 655446, 524286, 8, 655446, 524287, 8, 655446, 524287, 9, 655446, 524287, 10, 655446, 524286, 10, 655446, 524285, 10, 655446, 524284, 10, 655446, 524283, 10, 655446, 524287, 7, 655446, 524283, 7, 655446, 524284, 7, 655446, 524285, 7, 655446, 524286, 7, 655446, 524283, 6, 655446, 524283, 5, 655446, 524283, 4, 655446, 524283, 3, 655446, 524283, 2, 655446, 524283, 1, 655446, 524283, 0, 655446, 524284, 0, 655446, 524285, 0, 655446, 524286, 0, 655446, 524287, 0, 655446, 524287, 65535, 655446, 524286, 65535, 655446, 524285, 65535, 655446, 524284, 65535, 655446, 524283, 65535, 655446, 524287, 1, 655446, 524287, 2, 655446, 524287, 3, 655446, 524287, 4, 655446, 524287, 5, 655446, 524287, 6, 655446)
 }
-metadata/_editor_floor_ = Vector3(0, 6, 0)
+metadata/_editor_floor_ = Vector3(0, 7, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_eu0xh")
 autoplay = true
+
+[node name="Goal" parent="." instance=ExtResource("4_y58pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5625, 133.457, 14.2904)
+next_level = "moo_moo_meadows"
