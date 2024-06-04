@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxr3mqq5htcp0"]
+[gd_scene load_steps=9 format=3 uid="uid://dxr3mqq5htcp0"]
 
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="1_b1e7x"]
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="2_76avp"]
+[ext_resource type="PackedScene" uid="uid://4voo7q6mp5pa" path="res://rc_enemy.tscn" id="2_pqa4h"]
 [ext_resource type="AudioStream" uid="uid://b6uuow04cn0ia" path="res://sounds/31. DK Summit.mp3" id="3_eu0xh"]
 [ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="4_y58pf"]
 
@@ -27,7 +28,10 @@ shadow_enabled = true
 environment = SubResource("Environment_m7fo4")
 
 [node name="race" parent="." groups=["Player"] instance=ExtResource("1_b1e7x")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.7312, 144.885, 147.141)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 145, 147)
+
+[node name="race2" parent="." instance=ExtResource("2_pqa4h")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 145, 149)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)

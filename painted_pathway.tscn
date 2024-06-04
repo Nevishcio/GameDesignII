@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5a5wa411q3kt"]
+[gd_scene load_steps=8 format=3 uid="uid://5a5wa411q3kt"]
 
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="1_15jh3"]
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="2_250w8"]
+[ext_resource type="PackedScene" uid="uid://4voo7q6mp5pa" path="res://rc_enemy.tscn" id="2_vsglr"]
+[ext_resource type="AudioStream" uid="uid://fj553kxmmjjh" path="res://sounds/28. Coconut Mall.mp3" id="3_icf1c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbt3r"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -35,5 +37,24 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
+[node name="race2" parent="." instance=ExtResource("2_vsglr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2095, 100.572, -681)
+
+[node name="race3" parent="." instance=ExtResource("2_vsglr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2085, 99.1618, -681)
+
+[node name="race4" parent="." instance=ExtResource("2_vsglr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2115, 103, -681)
+
+[node name="race5" parent="." instance=ExtResource("2_vsglr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2125, 104.45, -681)
+
+[node name="race6" parent="." instance=ExtResource("2_vsglr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2135, 105.451, -681)
+
 [node name="race" parent="." instance=ExtResource("2_250w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2105.43, 103.665, -681.407)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2105.43, 101.686, -681)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_icf1c")
+autoplay = true

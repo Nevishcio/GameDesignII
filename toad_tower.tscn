@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5bon6ys83nxr"]
+[gd_scene load_steps=9 format=3 uid="uid://b5bon6ys83nxr"]
 
 [ext_resource type="MeshLibrary" uid="uid://duxgb5wlr0pb0" path="res://assets/meshes/road_tiles.tres" id="1_t47gn"]
 [ext_resource type="PackedScene" uid="uid://cemxemnl3ypjj" path="res://rc_player.tscn" id="2_4qc55"]
 [ext_resource type="PackedScene" uid="uid://c3uqhdwf4rqnu" path="res://goal.tscn" id="2_x15by"]
+[ext_resource type="PackedScene" uid="uid://4voo7q6mp5pa" path="res://rc_enemy.tscn" id="3_787v4"]
 [ext_resource type="AudioStream" uid="uid://dswxl7uolhqkw" path="res://sounds/21. Mushroom Gorge.mp3" id="4_6n48q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tyt2n"]
@@ -64,8 +65,20 @@ next_level = "koopa's_crash"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.607, 4.19474, 0)
 next_level = "koopa's_crash"
 
+[node name="race2" parent="." instance=ExtResource("3_787v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335, 8, 185)
+
+[node name="race3" parent="." instance=ExtResource("3_787v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331, 8, 182)
+
+[node name="race4" parent="." instance=ExtResource("3_787v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327, 8, 179)
+
+[node name="race5" parent="." instance=ExtResource("3_787v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323, 9, 176)
+
 [node name="race" parent="." groups=["Player"] instance=ExtResource("2_4qc55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.72, 8.65566, 186.593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339, 8, 188)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_6n48q")
